@@ -35,5 +35,6 @@
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
+<div id="app" class="{{ route_class() }}-page">
 
 </html>
