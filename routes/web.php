@@ -1,8 +1,12 @@
 <?php
 
-Route::get('/', 'PagesController@root')->name('root');
+//Route::get('/', 'PagesController@root')->name('root');
 
-
+Route::get('/', function () {
+    \Illuminate\Support\Facades\Mail::to('495523239@qq.com')->send(new \App\Mail\OrderShipped());
+    return '邮件发送成功';
+//    \Illuminate\Support\Facades\Mail::to()
+});
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
